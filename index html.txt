@@ -1,0 +1,14 @@
+﻿<html>
+<head>
+     <meta charset="UTF8">
+	 <title>朱政宇的網頁</title></title>
+</head>
+<body>
+     <p>我是113朱政宇</p>
+	 <hr>
+	 <h3>我的上課筆記及作品:</h3>
+	 <ul>
+	     <li><a href="網頁設計.html">網頁設計.html</a></li>
+		 </ul>
+		 </body>
+		 </html>
