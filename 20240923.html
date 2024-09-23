@@ -18,6 +18,16 @@
                #id{     }
                .class{    }
                */
+               /*黃色
+                 1.color name
+                 2.#色碼 #RRGGBB 00-FF
+                 3.rgb(r,g,b) 0-255
+                 4.rgba(r,g,b,a) a:可見度 0~1
+                 5.hsl(0~360,0~100%,0~100%,0~1)
+
+                 */
+                 /*前景:文字顏色(color)
+                   背景(background)*/
                P{
                 margin:0 ;
                }
@@ -31,6 +41,10 @@
                     display: inline-block;}
                 #sp2{display: inline-block;}
                 #sp3{display: block;}
+                /*漸層 not a color is a image
+                1.線性漸層 linear-gradient()*/
+
+                #d1{background: linear-gradient(to right,red,yellow,white);}
                    
      </style>
 </head>
@@ -40,6 +54,9 @@
     <span>行內元素</span>
     <span>行內區塊元素</span>
     <span>區塊元素</span>
+    <div id="d1">一</div>
+    <div id="d2">二</div>
+    <div id="d3">三</div>
 
 
 
