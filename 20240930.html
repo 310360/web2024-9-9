@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>漸層</title>
+<meta charset="UTF8">
+<style>
+    div{width: 500px;
+        height: 100px;}
+    #d1{background: linear-gradient(90deg,yellow 25%,white 70%,pink 20%);}
+    #d2{background: repeating-linear-gradient(30deg,red 20%,white 50%)}
+    #d3{background: radial-gradient(white 20%,pink,yellow,rgb(58, 243, 58));}
+    #d4{background: repeating-radial-gradient(circle,rgb(240, 240, 113),white,rgb(245, 166, 245));height: 500;}
+    #d5{background: conic-gradient(rgb(224, 31, 160),rgb(39, 231, 167),rgb(88, 168, 235),rgb(224, 31, 160));height: 500;}
+    #d6{background: repeating-linear-gradient(rgb(224, 31, 160)10%,white 15%,rgb(224, 31, 160)10%);}
+    /*動畫*/
+    @keyframes k1   {
+        0%{background: radial-gradient(white 10%,pink,yellow,rgb(58, 243, 58));}
+        12%{background: radial-gradient(white 30%,pink,yellow,rgb(58, 243, 58));}
+        25%{background: radial-gradient(white 10%,pink,yellow,rgb(58, 243, 58));}
+        38%{background: radial-gradient(white 30%,pink,yellow,rgb(58, 243, 58));}
+        50%{background: radial-gradient(white 50%,pink,yellow,rgb(58, 243, 58));}
+        63%{background: radial-gradient(white 70%,pink,yellow,rgb(58, 243, 58));}
+        75%{background: radial-gradient(white 90%,pink,yellow,rgb(58, 243, 58));}
+        88%{background: radial-gradient(white 70%,pink,yellow,rgb(58, 243, 58));}
+        100%{background: radial-gradient(white 10%,pink,yellow,rgb(58, 243, 58));}
+        
+    }
+    #a3{animation: k1 1s infinite linear;}
+    @keyframes k2 {
+        0%{background: repeating-radial-gradient(circle,rgb(240, 240, 113),white 20%,rgb(245, 166, 245));}
+        25%{background: repeating-radial-gradient(circle,rgb(240, 240, 113),white 50%,rgb(245, 166, 245));}
+        50%{background: repeating-radial-gradient(circle,rgb(240, 240, 113),white 70%,rgb(245, 166, 245));}
+        75%{background: repeating-radial-gradient(circle,rgb(240, 240, 113),white 50%,rgb(245, 166, 245));}
+        100%{background: repeating-radial-gradient(circle,rgb(240, 240, 113),white 20%,rgb(245, 166, 245));}
+}
+#a4{animation: k2 1s infinite linear;}
+#a9{background-color: aqua;
+transition: width 1s linear;}
+#a9:hover {
+    width: 100px;
+}
+</style>
+</head>
+<div id="d1"></div>
+<div id="d2"></div>
+<div id="d3"></div>
+<div id="d4"></div>
+<div id="d5"></div>
+<div id="d6"></div>
+<!--動畫--><hr>
+<div id="a3"></div>
+</html>
