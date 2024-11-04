@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>1104上課筆記</title>
+        <meta charset="UTF8">
+        <script>
+            t1=0;
+        function get(id){
+      return document.getElementById(id);
+        }
+        function getRandNum(min,max){
+            return Math.floor(Math.random()*(max-min+1))+min;
+        }
+        function rollingDice(){
+            dice=getRandNum(1,6);
+            get("dice").src=`${dice}.png`;
+
+        }
+          function startInterval(){
+            if(t1==0){
+                t1=setInterval(rollingDice,50);
+                setTimeout(stopInterval,3000);
+                get("msg").innerHTML="正在擲骰";
+            }
+        }
+        
+        function stopInterval(){
+            clearInterval(t1);
+            t1=0;
+         get("msg").innerHTML="你得到"+dice+"點";
+        }
+        </script>
+
+    </head>
+    <body>
+        <button onclick="startInterval();">開始</button>
+        <button onclick="stopInterval();">結束</button>
+        <br>
+        <img id="dice" src="0.png">
+       <div id="msg"></div>
+    </body>
+</html>
