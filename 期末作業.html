@@ -1,31 +1,38 @@
 <html>
     <head>
-        <tittle>課程1125</tittle>
-        <meta charset="UTF8">
-        <style>
-            #worldmap {
-                background: url("grass.jpg");
-                background-size: 200px,140px;
-                width: 1600px;
-                height: 800px;
-                position: relative;
+        <title>作業</title>      
+<meta charset="UTF8">
+<style>
+    #worldmap{
+     background: url("grass.jpg");
+     background-size: 200px,140px;
+     width: 1600px;
+     height: 800px;
+     position: relative;
+    }
+    @keyframes  rewalk{
+         0%{background-position-x: 0px;}
+        100%{background-position-x:   -144px;}
+         }
+     #role {
+    background-image: url("sprite1.png");
+     width: 48px;
+     height: 72px;
+     position: absolute; 
+     animation: rolewalk 1s steps(3) infinite;
             }
-            @keyframes rolewalk {
-              0%{background-position-x: 0px;}
-                100%{background-position-x:   -144px;}
-                
-            }
-            #role {
-                background-image: url("sprite1.png");
-            width: 48px;
-            height: 72px;
-            position: absolute; 
-            animation: rolewalk 1s steps(3) infinite;
-            }
+      #monster{
+        background-image: url(YNSRBfx84b.jpg);
+        width: 200px;
+        height: 280px; 
+        position:absolute;
+        top: 500px;
+        left: 1350px;
+      }
 
-        </style>
-        <script>
-            var pos={x:0,y:0};
+</style>
+<script>
+var pos={x:0,y:0};
             var dir={"ArrowUp":0,"ArrowDown":0,"ArrowLeft":0,"ArrowRight":0};
             function get(id){
                 return document.getElementById(id);
@@ -58,15 +65,14 @@
                     dir={"ArrowUp":0,"ArrowDown":0,"ArrowLeft":0,"ArrowRight":0};
                     setInterval(walk,10);
                 }
+                
 
-                 
-            
-            
-        </script>
+</script>
     </head>
-    <body  onload="gameInt();" onkeydown="mykeydown();" onkeyup="mykeyup();">
-        <div id="worldmap">
-            <div id="role" ></div>
-        </div>
+    <body>
+        <body  onload="gameInt();" onkeydown="mykeydown();" onkeyup="mykeyup();">
+        <div id="worldmap"></div>
+         <div id="role" ></div>
+         <div id="monster"></div>
     </body>
 </html>
