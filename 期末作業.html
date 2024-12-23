@@ -10,21 +10,178 @@
                 margin:50%,50%;
             }
     #end{ 
-        background-image:url(ufo.png);
-        width:120px;
-        height: 80px;
+        background-image:url(ship.png);
+    background-size: 80px,120px;
+    width: 80px;
+    height: 120px;
         position:absolute;
         left: 1400px;
         top: 200px;
     }
+    #role{
+        background-image: url(sprite1.png);
+        width: 48px;
+        height: 72px;
+        position: absolute;
+    }
+    #place{
+        width: 400px;
+        height: 150px;
+        background-color: red;
+        position: absolute;
+        left: 300px;
+        top: 30px;
+
+    }
+    #place2{
+        width: 400px;
+        height: 150px;
+        background-color: red;
+        position: absolute;
+        left: 300px;
+        top: 280px;
+
+    }
+    #place3{
+        width: 200px;
+        height: 280px;
+        background-color: red;
+        position: absolute;
+        left: 730px;
+        top: 90px;
+
+    }
+    #place4{
+        width: 200px;
+        height: 300px;
+        background-color: red;
+        position: absolute;
+        left: 60px;
+        top: 90px;
+
+    }
+    #place5{
+        width: 80px;
+        height: 40px;
+        background-color: red;
+        position: absolute;
+        left: 300px;
+        top: 180px;
+
+
+    }
+    #place6{
+        width: 50px;
+        height: 60px;
+        background-color: red;
+        position: absolute;
+        left: 420px;
+        top: 240px;
+
+
+    }
+    #place7{
+        width: 150px;
+        height: 60px;
+        background-color: red;
+        position: absolute;
+        left: 500px;
+        top: 160px;
+
+
+    }
+    #place8{
+        width: 400px;
+        height: 140px;
+        background-color: red;
+        position: absolute;
+        left: 1000px;
+        top: 75px;
+
+
+    }
+    #place9{
+        width: 400px;
+        height: 100px;
+        background-color: red;
+        position: absolute;
+        left: 1000px;
+        top: 280px;
+
+
+    }
+
+
+
+     
+    
+    
+        
+    
+
     
     </style>
+    <script>
+         var pos={x:30,y:200};
+            var dir={"ArrowUp":0,"ArrowDown":0,"ArrowLeft":0,"ArrowRight":0};
+            function get(id){
+                return document.getElementById(id);
+            }
+            function mykeydown(){
+                event.preventDefault();
+                var bgPY={"ArrowUp":"-216px","ArrowDown":"0px","ArrowLeft":"-72px","ArrowRight":"-144px"};
+                get("role").style.backgroundPositionY=bgPY[event.key]
+                dir[event.key]=1;
+            }
+                function mykeyup(){
+                    event.preventDefault();
+                    dir[event.key]=0;
+                }
+                function walk(){
+                    if(dir["ArrowUp"]==1){
+                        pos.y--;
+                    }else if(dir["ArrowDown"]==1){
+                        pos.y++;
+                    }else if(dir["ArrowLeft"]==1){
+                        pos.x--;
+                    }else if(dir["ArrowRight"]==1){
+                        pos.x++;
+                    }
+                    get("role").style.left=pos.x+"px";
+                    get("role").style.top=pos.y+"px";
+                }
+                function gameInt(){
+                    pos={x:0,y:0}
+                    dir={"ArrowUp":0,"ArrowDown":0,"ArrowLeft":0,"ArrowRight":0};
+                    setInterval(walk,10);
+                }
+                if(role.x<400){
+                    role.x=0
+                    role.y=0
+                }
+                 
+            
+            
+  
 
+    
+
+
+    </script>
     </head>>
-    <body>
+    <body onload="gameInt();" onkeydown="mykeydown();" onkeyup="mykeyup();">
         <div id="d1"></div>
-        <div id="end">
-
+        <div id="end"></div>
+        <div id="role"></div>
+        <div id="place"></div>
+        <div id="place2"></div>
+        <div id="place3"></div>
+        <div id="place4"></div>
+        <div id="place5"></div>
+        <div id="place6"></div>
+        <div id="place7"></div>
+        <div id="place8"></div>
+        <div id="place9"></div>
         </div>
 
     </body>
