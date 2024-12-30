@@ -53,7 +53,7 @@
     }
     #place4{
         width: 200px;
-        height: 300px;
+        height: 280px;
         background-color: red;
         position: absolute;
         left: 60px;
@@ -147,21 +147,52 @@
                     }else if(dir["ArrowRight"]==1){
                         pos.x++;
                     }
+                    if(pos.x>1450){
+                        pos.x=5;
+                        pos.y=15;
+                    }
+                    if(pos.y>360){
+                        pos.x=5;
+                        pos.y=15;
+                    }
+                  
+                    if(pos.x>20&&pos.x<245&&pos.y>20&&pos.y<355){
+                        pos.x=5;
+                        pos.y=15;
+                    }
+                    if(pos.y<15){
+                        pos.x=5;
+                        pos.y=15;
+                    }
+                    if(pos.x<5){
+                        pos.x=5;
+                        pos.y=15;
+                    }
+                    if(pos.x>260&&pos.y<205&&pos.x<370){
+                        pos.x=5;
+                        pos.y=15;
+                    }
+                    if(pos.x>260&&pos.y<165&&pos.x<685){
+                        pos.x=5;
+                        pos.y=15;
+                    }
+                    if(pos.x>470&&pos.y<205&&pos.x<640){
+                        pos.x=5;
+                        pos.y=15;
+                    }
+           
+                    
+                    
+                    
+                    
                     get("role").style.left=pos.x+"px";
                     get("role").style.top=pos.y+"px";
                 }
                 function gameInt(){
-                    pos={x:0,y:0}
+                    pos={x:5,y:15}
                     dir={"ArrowUp":0,"ArrowDown":0,"ArrowLeft":0,"ArrowRight":0};
                     setInterval(walk,10);
                 }
-                if(role.x<400){
-                    role.x=0
-                    role.y=0
-                }
-                 
-            
-            
   
 
     
